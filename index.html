@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        /* Basic Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #003366; /* Dark Blue */
+            color: #fff;
+            position: fixed;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background: #4e44ce;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            background-color: #b2ebf2; /* Full Water Color */
+            animation: fadeIn 1s ease-in-out;
+            min-height: 100vh;
+        }
+
+        .section {
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Dashboard Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons and Inputs */
+        .section input[type="text"],
+        .section input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .section button {
+            padding: 10px 20px;
+            background: #2575fc;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .section button:hover {
+            background: #6a11cb;
+        }
+
+        /* Toggle Checkbox */
+        .toggle {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .toggle input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* Logo Styling */
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 150px; /* Adjusted the size of logo */
+        }
+
+        /* Icon and Title for Admin */
+        .admin-title {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://i.ibb.co/S3kCwQj/2416666.png" alt="Logo">
+        </div>
+        <h2 class="admin-title">Admin Panel</h2>
+        <ul>
+            <li><a href="#" onclick="showSection('changeName')">Change Name</a></li>
+            <li><a href="#" onclick="showSection('bkash')">Change Bkash Number</a></li>
+            <li><a href="#" onclick="showSection('nagad')">Change Nagad Number</a></li>
+            <li><a href="#" onclick="showSection('rocket')">Change Rocket Number</a></li>
+            <li><a href="#" onclick="showSection('upay')">Change Upay Number</a></li>
+            <li><a href="#" onclick="showSection('banner')">Change Banner</a></li>
+            <li><a href="#" onclick="showSection('whatsapp')">Change WhatsApp Link</a></li>
+            <li><a href="#" onclick="showSection('products')">Manage Products</a></li>
+            <li><a href="#" onclick="showSection('prices')">Change Product Prices</a></li>
+            <li><a href="#" onclick="showSection('settings')">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Change Name Section -->
+        <div id="changeName" class="section" style="display: none;">
+            <h2>Change Name</h2>
+            <input type="text" placeholder="Enter New Name">
+            <button>Save</button>
+        </div>
+
+        <!-- Bkash Section -->
+        <div id="bkash" class="section" style="display: none;">
+            <h2>Change Bkash Number</h2>
+            <div class="toggle">
+                <input type="checkbox" id="enableBkash"> Enable Bkash
+            </div>
+            <input type="text" placeholder="Enter Bkash Number">
+            <button>Save</button>
+        </div>
+
+        <!-- Nagad Section -->
+        <div id="nagad" class="section" style="display: none;">
+            <h2>Change Nagad Number</h2>
+            <div class="toggle">
+                <input type="checkbox" id="enableNagad"> Enable Nagad
+            </div>
+            <input type="text" placeholder="Enter Nagad Number">
+            <button>Save</button>
+        </div>
+
+        <!-- Rocket Section -->
+        <div id="rocket" class="section" style="display: none;">
+            <h2>Change Rocket Number</h2>
+            <div class="toggle">
+                <input type="checkbox" id="enableRocket"> Enable Rocket
+            </div>
+            <input type="text" placeholder="Enter Rocket Number">
+            <button>Save</button>
+        </div>
+
+        <!-- Upay Section -->
+        <div id="upay" class="section" style="display: none;">
+            <h2>Change Upay Number</h2>
+            <div class="toggle">
+                <input type="checkbox" id="enableUpay"> Enable Upay
+            </div>
+            <input type="text" placeholder="Enter Upay Number">
+            <button>Save</button>
+        </div>
+
+        <!-- Banner Section -->
+        <div id="banner" class="section" style="display: none;">
+            <h2>Change Banner</h2>
+            <input type="file">
+            <button>Upload</button>
+        </div>
+
+        <!-- WhatsApp Section -->
+        <div id="whatsapp" class="section" style="display: none;">
+            <h2>Change WhatsApp Link</h2>
+            <input type="text" placeholder="Enter WhatsApp Link">
+            <button>Save</button>
+        </div>
+
+        <!-- Manage Products Section -->
+        <div id="products" class="section" style="display: none;">
+            <h2>Manage Products</h2>
+            <input type="text" placeholder="Add New Product">
+            <button>Add</button>
+            <button>Remove</button>
+        </div>
+
+        <!-- Change Product Prices Section -->
+        <div id="prices" class="section" style="display: none;">
+            <h2>Change Product Prices</h2>
+            <input type="text" placeholder="Enter Product Price">
+            <button>Save</button>
+        </div>
+
+        <!-- Settings Section -->
+        <div id="settings" class="section" style="display: none;">
+            <h2>Settings</h2>
+            <input type="text" placeholder="Update Settings">
+            <button>Save</button>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections first
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
